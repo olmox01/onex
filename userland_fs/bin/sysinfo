@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /bin/bash /home/sh/onex/apps/sysinfo "$@"

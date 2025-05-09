@@ -1,0 +1,19 @@
+#!/bin/sh
+# File Manager Launcher
+# Avvia il file manager preservando lo stato del terminale
+
+# Salva lo stato del terminale
+stty_save=$(stty -g 2>/dev/null)
+
+# Avvia il file manager
+/usr/bin/python3 /home/sh/onex/apps/filemanager/main.py "$@"
+EXIT_CODE=$?
+
+# Ripristina lo stato del terminale
+stty $stty_save 2>/dev/null || true
+clear
+
+# Migliora l'aspetto del prompt
+echo ""
+
+exit $EXIT_CODE

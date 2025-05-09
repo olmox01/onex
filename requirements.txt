@@ -1,0 +1,7 @@
+# ONEX - Lista dipendenze
+pyfiglet>=1.0.2
+psutil>=5.9.0
+questionary>=2.0.0
+colorama>=0.4.4
+pillow>=9.0.0
+tqdm>=4.64.0

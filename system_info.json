@@ -1,0 +1,37 @@
+{
+  "system": {
+    "os": "Linux",
+    "distribution": "debian",
+    "kernel": "6.1.0-34-amd64",
+    "architecture": "x86_64",
+    "python_version": "3.11.2",
+    "hostname": "sh",
+    "cpu_count": 16,
+    "terminal": "xterm-256color",
+    "shell": "/bin/bash",
+    "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  },
+  "user": {
+    "current_user": "root",
+    "home_dir": "/root",
+    "sudo_access": true,
+    "user_groups": [
+      "root"
+    ],
+    "all_users": [
+      {
+        "username": "sh",
+        "uid": "1000",
+        "home": "/home/sh",
+        "shell": "/bin/bash"
+      },
+      {
+        "username": "libvirt-qemu",
+        "uid": "64055",
+        "home": "/var/lib/libvirt",
+        "shell": "/usr/sbin/nologin"
+      }
+    ]
+  },
+  "timestamp": 1746756732.090381
+}

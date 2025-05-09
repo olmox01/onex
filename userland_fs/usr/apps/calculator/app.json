@@ -1,0 +1,8 @@
+{
+    "name": "calculator",
+    "type": "py",
+    "description": "Semplice calcolatrice a riga di comando",
+    "version": "1.0.0",
+    "author": "ONEX Team",
+    "system_app": false
+}

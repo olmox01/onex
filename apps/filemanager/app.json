@@ -1,0 +1,8 @@
+{
+    "name": "filemanager",
+    "type": "py",
+    "description": "File manager interattivo con interfaccia curses",
+    "version": "1.0.0",
+    "author": "ONEX Team",
+    "system_app": true
+}
