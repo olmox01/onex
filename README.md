@@ -79,7 +79,7 @@ Il bootloader verificherà ed installerà automaticamente le dipendenze necessar
 Dopo l'avvio del sistema, interagisci con la shell simulata:
 
 1. **Navigazione**: Usa i comandi standard come `cd`, `ls`, etc.
-2. **File Manager**: Digita `filemanager` per avviare l'interfaccia di gestione file
+2. **File Manager**: Digita `run filemanager` per avviare l'interfaccia di gestione file
 3. **Esecuzione Programmi**: I file eseguibili possono essere avviati come in un normale ambiente Linux
 4. **Utility di Sistema**: Comandi integrati per gestire l'ambiente simulato
 5. **Chiusura**: Usa il comando `exit` per uscire dall'ambiente
