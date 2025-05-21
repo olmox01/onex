@@ -1,69 +1,82 @@
-# ONEX - Userland Simulata per Terminali Linux
 
-## Panoramica
+ _   _  ______  __   __  _____ 
+| \ | ||  ____| \ \ / / / ____|
+|  \| || |__    \ V / | (___  
+| . ` ||  __|    > <   \___ \ 
+| |\  || |____  / . \  ____) |
+|_| \_||______||_/ \_||_____/ 
+       N E X S   O S
 
-ONEX è un sistema che simula un ambiente userland completo all'interno di un terminale Linux. Il progetto fornisce un'esperienza simile a un sistema operativo indipendente, con un proprio filesystem virtuale, un file manager interattivo, e un'interfaccia utente basata su curses.
 
-## Caratteristiche Principali
+# ONEX – A Simulated Userland for Linux Terminals
 
-- **Ambiente Simulato**: Fornisce un'esperienza di shell interattiva con proprio filesystem
-- **File Manager**: Navigazione e gestione file con interfaccia TUI (Text User Interface)
-- **Filesystem Virtuale**: Struttura filesystem di tipo UNIX con mount point per il filesystem reale
-- **Gestione Utenti**: Autenticazione e profili utente
-- **Shell Compatibility**: Integrazione con i diversi tipi di shell dei sistemi Linux
-- **UI Terminale**: Interfaccia utente interattiva basata su curses
+## Overview
 
-## Requisiti di Sistema
+**ONEX** is a project that conjures up a fully simulated userland environment right within your Linux terminal. Think of it as a playful yet powerful mini-operating system that lives inside your terminal session, complete with its own virtual filesystem, an interactive file manager, and a curses-based user interface that’s both retro and refined.
 
-- Python 3.6 o superiore
-- Sistema operativo Linux
-- Librerie necessarie (installate automaticamente dal bootloader):
-  - curses
-  - pyfiglet
-  - psutil
-  - questionary
-  - colorama
-  - pillow
-  - tqdm
+## Key Features
 
-## Installazione
+* **Simulated Environment**: Dive into an interactive shell experience with a self-contained filesystem.
+* **File Manager**: Navigate and manage your files through a snappy TUI (Text User Interface).
+* **Virtual Filesystem**: A UNIX-style structure with mount points linking to your actual filesystem—think of it as a sandbox with a door.
+* **User Management**: Authentication and user profiles add a dash of realism.
+* **Shell Compatibility**: Plays nicely with your favorite Linux shells.
+* **Terminal UI**: Powered by curses—classic vibes, modern purpose.
 
-1. Clona il repository:
+## System Requirements
+
+* Python 3.6 or higher
+* A Linux-based OS
+* Required libraries (automagically installed by the bootloader):
+
+  * `curses`
+  * `pyfiglet`
+  * `psutil`
+  * `questionary`
+  * `colorama`
+  * `pillow`
+  * `tqdm`
+
+## Installation
+
+1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/onex.git
    cd onex
    ```
 
-2. Esegui il sistema:
+2. Launch the system:
+
    ```bash
    python run.py
    ```
 
-Il bootloader verificherà ed installerà automaticamente le dipendenze necessarie.
+The bootloader will handle dependency checks and installations for you, like your own personal sysadmin elf.
 
-## Struttura del Progetto
+## Project Structure
 
 ```
 /onex/
-├── run.py                     # Punto di ingresso principale
-├── README.md                  # Documentazione
+├── run.py                     # Main entry point
+├── README.md                  # Documentation, this very guide!
 ├── bootloader/
-│   └── boot.py                # Gestore del processo di avvio
+│   └── boot.py                # Startup handler
 ├── src/
-│   ├── main.py                # Coordinatore del sistema
+│   ├── main.py                # System coordinator
 │   ├── graphics/
-│   │   ├── ui.py              # Interfaccia utente
-│   │   └── graphics.py        # Utility grafiche
+│   │   ├── ui.py              # User interface layer
+│   │   └── graphics.py        # Graphic utilities
 │   ├── scripts/
-│   │   ├── 01.sh              # Utility per gestione sistema
-│   │   └── 02.sh              # Gestione filesystem virtuale
+│   │   ├── 01.sh              # System utility scripts
+│   │   └── 02.sh              # Virtual filesystem management
 │   ├── system/
-│   │   ├── shell_compatibility.py  # Compatibilità con shell
-│   │   └── input.py           # Gestione input utente
+│   │   ├── shell_compatibility.py  # Shell integration layer
+│   │   └── input.py           # User input handling
 │   └── userland/
-│       ├── userland.py        # Sistema userland principale
-│       └── file_manager.py    # Gestore file interattivo
-└── userland_fs/               # Directory per il filesystem virtuale
+│       ├── userland.py        # Core userland system
+│       └── file_manager.py    # Interactive file manager
+└── userland_fs/               # The simulated filesystem
     ├── bin/
     ├── etc/
     ├── home/
@@ -71,58 +84,69 @@ Il bootloader verificherà ed installerà automaticamente le dipendenze necessar
     ├── var/
     ├── tmp/
     └── mnt/
-        └── system/            # Mount point per il filesystem reale
+        └── system/            # Mount point for the real filesystem
 ```
 
-## Utilizzo
+## Usage
 
-Dopo l'avvio del sistema, interagisci con la shell simulata:
+Once ONEX is up and running, you're ready to engage with your simulated shell environment:
 
-1. **Navigazione**: Usa i comandi standard come `cd`, `ls`, etc.
-2. **File Manager**: Digita `run filemanager` per avviare l'interfaccia di gestione file
-3. **Esecuzione Programmi**: I file eseguibili possono essere avviati come in un normale ambiente Linux
-4. **Utility di Sistema**: Comandi integrati per gestire l'ambiente simulato
-5. **Chiusura**: Usa il comando `exit` per uscire dall'ambiente
+1. **Navigation**: Use familiar commands like `cd`, `ls`, etc.
+2. **File Manager**: Type `run filemanager` to launch the interactive file explorer.
+3. **Program Execution**: Run executables just like in any real Linux setup.
+4. **System Utilities**: A suite of built-in commands for managing your simulated world.
+5. **Exit**: Type `exit` to gracefully shut down the experience (sad, but necessary).
 
 ## File Manager
 
-Il file manager interattivo si naviga con:
+The TUI file manager responds to your keystrokes with old-school flair:
 
-- **Frecce direzionali**: Spostamento tra file
-- **Enter**: Apri file/directory
-- **Esc/Backspace**: Torna alla directory superiore
-- **F5**: Aggiorna la vista
-- **F1**: Mostra aiuto
-- **F10/Q**: Esci dal file manager
+* **Arrow Keys**: Move around files and directories
+* **Enter**: Open a file or step into a directory
+* **Esc/Backspace**: Move up one directory
+* **F5**: Refresh the view (always satisfying)
+* **F1**: Summon help (you’re not alone!)
+* **F10** or **Q**: Exit the file manager
 
-## Architettura del Sistema
+## System Architecture
 
 1. **Boot Process**:
-   - `run.py` → `bootloader/boot.py` → `src/main.py` → `src/userland/userland.py`
 
-2. **Flusso di Esecuzione**:
-   - Verifica ambiente e privilegi
-   - Rilevamento sistema e utente
-   - Installazione dipendenze
-   - Inizializzazione filesystem
-   - Avvio userland
-   - Interazione utente
+   * `run.py` → `bootloader/boot.py` → `src/main.py` → `src/userland/userland.py`
 
-3. **Filesystem Virtuale**:
-   - Struttura tipo UNIX
-   - Directory userland_fs con sottodirectory standard
-   - Mount point per accedere al filesystem reale
+2. **Execution Flow**:
 
-## Sviluppo
+   * Check environment and permissions
+   * Detect system and current user
+   * Install any missing dependencies
+   * Initialize the virtual filesystem
+   * Launch userland
+   * Engage with the user
 
-Per contribuire al progetto:
+3. **Virtual Filesystem**:
 
-1. Effettua un fork del repository
-2. Crea un branch per la tua funzionalità (`git checkout -b feature/amazing-feature`)
-3. Committa le modifiche (`git commit -m 'Add some amazing feature'`)
-4. Push al branch (`git push origin feature/amazing-feature`)
-5. Apri una Pull Request
+   * UNIX-like directory hierarchy
+   * Everything lives inside `userland_fs`
+   * Mount point for real system access included
 
-## Licenza
+## Development
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Want to contribute? We welcome your magic:
+
+1. Fork the repository
+2. Create your feature branch
+
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Commit your changes
+
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+4. Push to your branch
+
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. Open a Pull Request — and voila!
